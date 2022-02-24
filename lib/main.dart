@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_elements/pages/pages.dart';
 import 'package:ui_elements/widgets/bottomsheet.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter2 Demo Home Page'),
+      home: const Pages(),
     );
   }
 }
