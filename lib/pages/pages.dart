@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'scrollviews.dart';
 import 'test1.dart';
 import 'tictak.dart';
 
@@ -34,7 +35,7 @@ class Pages extends StatelessWidget {
               child: IconButton(
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const Test(),
+                      builder: (context) => const Scrollviews(),
                     ));
                   },
                   icon: Icon(Icons.abc)),
