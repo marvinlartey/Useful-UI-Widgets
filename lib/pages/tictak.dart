@@ -30,9 +30,15 @@ class _TictakState extends State<Tictak> {
       q = 0,
       r = 0;
   @override
-  /* void setState(turn) {
-    counter++;
-  } */
+  void win(xWinCondition) {
+    if (a == 255 && c == 255 && e == 255 ||
+        g == 255 && i == 255 && k == 255 ||
+        m == 255 && o == 255 && q == 255 ||
+        a == 255 && i == 255 && q == 255) {
+      print('x wins');
+    }
+    ;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -59,6 +65,7 @@ class _TictakState extends State<Tictak> {
                         counter++;
                       } else {}
                       ;
+                      print(counter);
                     });
                     if (counter % 2 != 0 && b == 0) {
                       setState(() {
@@ -95,7 +102,10 @@ class _TictakState extends State<Tictak> {
                 InkWell(
                   onTap: () {
                     setState(() {
-                      counter++;
+                      if (c == 0 && d == 0) {
+                        counter++;
+                      } else {}
+                      ;
                       print(counter);
                     });
                     if (counter % 2 != 0 && d == 0) {
@@ -134,7 +144,10 @@ class _TictakState extends State<Tictak> {
                 InkWell(
                   onTap: () {
                     setState(() {
-                      counter++;
+                      if (e == 0 && f == 0) {
+                        counter++;
+                      } else {}
+                      ;
                       print(counter);
                     });
                     if (counter % 2 != 0 && f == 0) {
@@ -173,7 +186,10 @@ class _TictakState extends State<Tictak> {
                 InkWell(
                   onTap: () {
                     setState(() {
-                      counter++;
+                      if (g == 0 && h == 0) {
+                        counter++;
+                      } else {}
+                      ;
                       print(counter);
                     });
                     if (counter % 2 != 0 && h == 0) {
@@ -208,7 +224,10 @@ class _TictakState extends State<Tictak> {
                 InkWell(
                   onTap: () {
                     setState(() {
-                      counter++;
+                      if (i == 0 && j == 0) {
+                        counter++;
+                      } else {}
+                      ;
                       print(counter);
                     });
                     if (counter % 2 != 0 && j == 0) {
@@ -244,7 +263,10 @@ class _TictakState extends State<Tictak> {
                 InkWell(
                   onTap: () {
                     setState(() {
-                      counter++;
+                      if (k == 0 && l == 0) {
+                        counter++;
+                      } else {}
+                      ;
                       print(counter);
                     });
                     if (counter % 2 != 0 && l == 0) {
@@ -283,7 +305,10 @@ class _TictakState extends State<Tictak> {
                 InkWell(
                   onTap: () {
                     setState(() {
-                      counter++;
+                      if (m == 0 && n == 0) {
+                        counter++;
+                      } else {}
+                      ;
                       print(counter);
                     });
                     if (counter % 2 != 0 && n == 0) {
@@ -319,7 +344,10 @@ class _TictakState extends State<Tictak> {
                 InkWell(
                   onTap: () {
                     setState(() {
-                      counter++;
+                      if (o == 0 && p == 0) {
+                        counter++;
+                      } else {}
+                      ;
                       print(counter);
                     });
                     if (counter % 2 != 0 && p == 0) {
@@ -355,7 +383,10 @@ class _TictakState extends State<Tictak> {
                 InkWell(
                   onTap: () {
                     setState(() {
-                      counter++;
+                      if (q == 0 && q == 0) {
+                        counter++;
+                      } else {}
+                      ;
                       print(counter);
                     });
                     if (counter % 2 != 0 && r == 0) {
@@ -410,6 +441,7 @@ class _TictakState extends State<Tictak> {
                   p = 0;
                   q = 0;
                   r = 0;
+                  counter = 0;
                 });
               },
               icon: const Icon(
