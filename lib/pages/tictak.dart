@@ -30,12 +30,25 @@ class _TictakState extends State<Tictak> {
       q = 0,
       r = 0;
   @override
-  void win(xWinCondition) {
+  void win() {
     if (a == 255 && c == 255 && e == 255 ||
         g == 255 && i == 255 && k == 255 ||
         m == 255 && o == 255 && q == 255 ||
+        a == 255 && g == 255 && m == 255 ||
+        c == 255 && i == 255 && o == 255 ||
+        e == 255 && k == 255 && q == 255 ||
+        m == 255 && i == 255 && e == 255 ||
         a == 255 && i == 255 && q == 255) {
-      print('x wins');
+      print('O wins');
+    } else if (b == 255 && d == 255 && f == 255 ||
+        h == 255 && j == 255 && l == 255 ||
+        n == 255 && p == 255 && r == 255 ||
+        b == 255 && h == 255 && n == 255 ||
+        d == 255 && j == 255 && p == 255 ||
+        f == 255 && l == 255 && r == 255 ||
+        n == 255 && j == 255 && f == 255 ||
+        b == 255 && j == 255 && r == 255) {
+      print('X wins');
     }
     ;
   }
@@ -64,22 +77,19 @@ class _TictakState extends State<Tictak> {
                       if (a == 0 && b == 0) {
                         counter++;
                       } else {}
-                      ;
-                      print(counter);
                     });
                     if (counter % 2 != 0 && b == 0) {
                       setState(() {
                         a = 255;
-                        b = 0;
+
+                        win();
                       });
                     } else if (counter % 2 == 0 && a == 0) {
                       setState(() {
-                        a = 0;
                         b = 255;
+                        win();
                       });
                     }
-                    ;
-                    print(counter);
                   },
                   child: Container(
                       margin: const EdgeInsets.all(33),
@@ -105,21 +115,18 @@ class _TictakState extends State<Tictak> {
                       if (c == 0 && d == 0) {
                         counter++;
                       } else {}
-                      ;
-                      print(counter);
                     });
                     if (counter % 2 != 0 && d == 0) {
                       setState(() {
                         c = 255;
-                        d = 0;
+                        win();
                       });
                     } else if (counter % 2 == 0 && c == 0) {
                       setState(() {
-                        c = 0;
                         d = 255;
+                        win();
                       });
                     }
-                    print(counter);
                   },
                   child: Container(
                     margin: const EdgeInsets.all(33),
@@ -147,16 +154,17 @@ class _TictakState extends State<Tictak> {
                       if (e == 0 && f == 0) {
                         counter++;
                       } else {}
-                      ;
-                      print(counter);
                     });
+
                     if (counter % 2 != 0 && f == 0) {
                       setState(() {
                         e = 255;
+                        win();
                       });
                     } else if (counter % 2 == 0 && e == 0) {
                       setState(() {
                         f = 255;
+                        win();
                       });
                     }
                   },
@@ -189,16 +197,17 @@ class _TictakState extends State<Tictak> {
                       if (g == 0 && h == 0) {
                         counter++;
                       } else {}
-                      ;
-                      print(counter);
                     });
+
                     if (counter % 2 != 0 && h == 0) {
                       setState(() {
                         g = 255;
+                        win();
                       });
                     } else if (counter % 2 == 0 && g == 0) {
                       setState(() {
                         h = 255;
+                        win();
                       });
                     }
                   },
@@ -227,16 +236,17 @@ class _TictakState extends State<Tictak> {
                       if (i == 0 && j == 0) {
                         counter++;
                       } else {}
-                      ;
-                      print(counter);
                     });
+
                     if (counter % 2 != 0 && j == 0) {
                       setState(() {
                         i = 255;
+                        win();
                       });
                     } else if (counter % 2 == 0 && i == 0) {
                       setState(() {
                         j = 255;
+                        win();
                       });
                     }
                   },
@@ -266,16 +276,16 @@ class _TictakState extends State<Tictak> {
                       if (k == 0 && l == 0) {
                         counter++;
                       } else {}
-                      ;
-                      print(counter);
                     });
                     if (counter % 2 != 0 && l == 0) {
                       setState(() {
                         k = 255;
+                        win();
                       });
                     } else if (counter % 2 == 0 && k == 0) {
                       setState(() {
                         l = 255;
+                        win();
                       });
                     }
                   },
@@ -308,16 +318,16 @@ class _TictakState extends State<Tictak> {
                       if (m == 0 && n == 0) {
                         counter++;
                       } else {}
-                      ;
-                      print(counter);
                     });
                     if (counter % 2 != 0 && n == 0) {
                       setState(() {
                         m = 255;
+                        win();
                       });
                     } else if (counter % 2 == 0 && m == 0) {
                       setState(() {
                         n = 255;
+                        win();
                       });
                     }
                   },
@@ -347,16 +357,16 @@ class _TictakState extends State<Tictak> {
                       if (o == 0 && p == 0) {
                         counter++;
                       } else {}
-                      ;
-                      print(counter);
                     });
                     if (counter % 2 != 0 && p == 0) {
                       setState(() {
                         o = 255;
+                        win();
                       });
                     } else if (counter % 2 == 0 && o == 0) {
                       setState(() {
                         p = 255;
+                        win();
                       });
                     }
                   },
@@ -386,16 +396,16 @@ class _TictakState extends State<Tictak> {
                       if (q == 0 && q == 0) {
                         counter++;
                       } else {}
-                      ;
-                      print(counter);
                     });
                     if (counter % 2 != 0 && r == 0) {
                       setState(() {
                         q = 255;
+                        win();
                       });
                     } else if (counter % 2 == 0 && q == 0) {
                       setState(() {
                         r = 255;
+                        win();
                       });
                     }
                   },
@@ -443,6 +453,34 @@ class _TictakState extends State<Tictak> {
                   r = 0;
                   counter = 0;
                 });
+              },
+              icon: const Icon(
+                Icons.restore_outlined,
+                size: 55,
+              )),
+          IconButton(
+              onPressed: () {
+                print(
+                  'a $a '
+                  'b $b '
+                  'c $c '
+                  'd $d '
+                  'e $e '
+                  'f $f '
+                  'g $g '
+                  'h $h '
+                  'i $i '
+                  'j $j '
+                  'k $k '
+                  'l $l '
+                  'm $m '
+                  'n $n '
+                  'o $o '
+                  'p $p '
+                  'q $q '
+                  'r $r '
+                  '$counter',
+                );
               },
               icon: const Icon(
                 Icons.restore_outlined,

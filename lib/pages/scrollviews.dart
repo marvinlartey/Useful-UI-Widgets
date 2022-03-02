@@ -7,7 +7,7 @@ class Scrollviews extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
+        //automaticallyImplyLeading: false,
         elevation: 0,
         backgroundColor: Colors.grey[300],
         centerTitle: true,
