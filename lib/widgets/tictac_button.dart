@@ -17,35 +17,20 @@ class TictacButton extends StatefulWidget {
 }
 
 class _TictacButtonState extends State<TictacButton> {
+  //checks if button is tapped
   bool isTapped = false;
-
-  /* int counter = 0;
-  int? a = 0;
-  int? b = 0,
-      c = 0,
-      d = 0,
-      e = 0,
-      f = 0,
-      g = 0,
-      h = 0,
-      i = 0,
-      j = 0,
-      k = 0,
-      l = 0,
-      m = 0,
-      n = 0,
-      o = 0,
-      p = 0,
-      q = 0,
-      r = 0; */
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      //sets the tap state to true
       onTap: () {
         setState(() {
           if (!isTapped) {
+            //sets tapped state to true
             isTapped = true;
+
+            //perform action when button is tapped
             widget.onPress();
           }
         });
@@ -56,10 +41,12 @@ class _TictacButtonState extends State<TictacButton> {
           color: const Color.fromARGB(255, 255, 255, 255),
           child: Stack(
             children: <Widget>[
+              //circle token properties
               IconButton(
                   onPressed: null,
                   icon: Icon(Icons.circle_outlined,
                       size: 55, color: Color.fromARGB(widget.circle, 0, 0, 0))),
+              //cross token properties
               IconButton(
                   onPressed: null,
                   icon: Icon(Icons.close_sharp,
@@ -68,48 +55,4 @@ class _TictacButtonState extends State<TictacButton> {
           )),
     );
   }
-
-  /* void win() {
-    if (a == 255 && c == 255 && e == 255 ||
-        g == 255 && i == 255 && k == 255 ||
-        m == 255 && o == 255 && q == 255 ||
-        a == 255 && g == 255 && m == 255 ||
-        c == 255 && i == 255 && o == 255 ||
-        e == 255 && k == 255 && q == 255 ||
-        m == 255 && i == 255 && e == 255 ||
-        a == 255 && i == 255 && q == 255) {
-      print('O wins');
-    } else if (b == 255 && d == 255 && f == 255 ||
-        h == 255 && j == 255 && l == 255 ||
-        n == 255 && p == 255 && r == 255 ||
-        b == 255 && h == 255 && n == 255 ||
-        d == 255 && j == 255 && p == 255 ||
-        f == 255 && l == 255 && r == 255 ||
-        n == 255 && j == 255 && f == 255 ||
-        b == 255 && j == 255 && r == 255) {
-      print('X wins');
-
-      setState(() {
-        a = 0;
-        b = 0;
-        c = 0;
-        d = 0;
-        e = 0;
-        f = 0;
-        g = 0;
-        h = 0;
-        i = 0;
-        j = 0;
-        k = 0;
-        l = 0;
-        m = 0;
-        n = 0;
-        o = 0;
-        p = 0;
-        q = 0;
-        r = 0;
-        counter = 0;
-      });
-    }
-  } */
 }

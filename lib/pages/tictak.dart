@@ -1,4 +1,3 @@
-import 'dart:ffi';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter/material.dart';
 
@@ -12,11 +11,12 @@ class Tictak extends StatefulWidget {
 }
 
 class _TictakState extends State<Tictak> {
+  //for checking player's turn
   bool isPlayer1 = true;
 
+  //display winner toasts
   void showWinner(String winner) =>
       Fluttertoast.showToast(msg: winner + " wins", fontSize: 20);
-  //void OWin() => Fluttertoast.showToast(msg: "O wins", fontSize: 20);
 
   int a = 0,
       b = 0,
@@ -36,7 +36,8 @@ class _TictakState extends State<Tictak> {
       p = 0,
       q = 0,
       r = 0;
-  @override
+
+  //O win conditions
   void win() {
     if (a == 255 && c == 255 && e == 255 ||
         g == 255 && i == 255 && k == 255 ||
@@ -46,9 +47,9 @@ class _TictakState extends State<Tictak> {
         e == 255 && k == 255 && q == 255 ||
         m == 255 && i == 255 && e == 255 ||
         a == 255 && i == 255 && q == 255) {
-      /*  print('O wins') */
       showWinner('O');
-    } else if (b == 255 && d == 255 && f == 255 ||
+    } //X win conditions
+    else if (b == 255 && d == 255 && f == 255 ||
         h == 255 && j == 255 && l == 255 ||
         n == 255 && p == 255 && r == 255 ||
         b == 255 && h == 255 && n == 255 ||
@@ -56,11 +57,11 @@ class _TictakState extends State<Tictak> {
         f == 255 && l == 255 && r == 255 ||
         n == 255 && j == 255 && f == 255 ||
         b == 255 && j == 255 && r == 255) {
-      //print('X wins')
       showWinner('X');
     }
   }
 
+  //builds the tictac_button
   Widget buildTictacButton(int _circle, int _cross,
       Function circlePlayedCallback, Function crossPlayedCallback) {
     return TictacButton(
@@ -68,13 +69,17 @@ class _TictakState extends State<Tictak> {
         cross: _cross,
         onPress: () {
           setState(() {
+            //checks whos turn it is
             if (isPlayer1) {
+              //
               circlePlayedCallback();
             } else {
               crossPlayedCallback();
             }
+            //switches turn
             isPlayer1 = !isPlayer1;
           });
+          //checks win conditions
           win();
         });
   }
@@ -83,7 +88,6 @@ class _TictakState extends State<Tictak> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        //automaticallyImplyLeading: false,
         centerTitle: true,
         title: const Text('TICTACTOE'),
       ),
